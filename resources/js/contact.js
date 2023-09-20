@@ -5,8 +5,8 @@ mapboxgl.accessToken =
     "pk.eyJ1Ijoic2h1LXZybyIsImEiOiJja2x4bndlYjUwMGhqMnJxN3oyYWE3cjRiIn0.b3G5Z9mGlV7XiSaSAwunEA";
 var map = new mapboxgl.Map({
     style: "mapbox://styles/mapbox/light-v10",
-    center: [90.3911645, 23.7494284], // Longitude, latitude
-    zoom: 18.5, // Zoom level
+    center: [114.1848992, 22.2792735], // Longitude, latitude
+    zoom: 16.5, // Zoom level
     pitch: 45,
     bearing: -17.6,
     container: "map", // Our #map target.
