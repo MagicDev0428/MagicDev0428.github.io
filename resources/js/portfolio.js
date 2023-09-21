@@ -125,187 +125,188 @@ $(document).ready(() => {
         });
     }
 
-    slider1(about_nav_btn_2[0]);
-    slider1(about_nav_btn_2[1]);
-    slider1(about_nav_btn_2[2]);
-    slider1(about_nav_btn_2[3]);
-    slider1(about_nav_btn_2[4]);
-    slider1(about_nav_btn_2[5]);
+    function apply_event() {
+        about_nav_btn_2.forEach((link) => {
+            slider1(link);
+        });
+    }
+
+    apply_event();
 
     let cards = document.querySelectorAll(".mix");
     let tip = document.querySelector(".tip");
 
-    cards.forEach((card) => {
-        card.addEventListener("click", () => {
-            if (card.classList.contains("web")) {
-                tip.classList.add("view");
-                let website = card
-                    .querySelector(".title")
-                    .textContent.replace(" ", "")
-                    .replace(" ", ".")
-                    .toLowerCase();
-                portfolioView({
-                    namePlate: card.querySelector(".title").textContent,
-                    category: "Web Development",
-                    project_brief: `Lorem ipsum, dolor sit amet consectetur
-                                    adipisicing elit. At corrupti modi perferendis
-                                    iure corporis dolores minus asperiores nemo
-                                    debitis veritatis id placeat, similique eum
-                                    recusandae ipsa quia cum earum nam?`,
+    // cards.forEach((card) => {
+    //     card.addEventListener("click", () => {
+    //         if (card.classList.contains("web")) {
+    //             tip.classList.add("view");
+    //             let website = card
+    //                 .querySelector(".title")
+    //                 .textContent.replace(" ", "")
+    //                 .replace(" ", ".")
+    //                 .toLowerCase();
+    //             portfolioView({
+    //                 namePlate: card.querySelector(".title").textContent,
+    //                 category: "Web Development",
+    //                 project_brief: `Lorem ipsum, dolor sit amet consectetur
+    //                                 adipisicing elit. At corrupti modi perferendis
+    //                                 iure corporis dolores minus asperiores nemo
+    //                                 debitis veritatis id placeat, similique eum
+    //                                 recusandae ipsa quia cum earum nam?`,
 
-                    project_date: "2019",
-                    project_client: "XYZ Corporation",
-                    project_link: `www.${website}.com`,
+    //                 project_date: "2019",
+    //                 project_client: "XYZ Corporation",
+    //                 project_link: `www.${website}.com`,
 
-                    image: [
-                        "resources/img/portfolios/web/1.jpg",
-                        "resources/img/portfolios/web/2.jpg",
-                        "resources/img/portfolios/web/3.jpg",
-                        "resources/img/portfolios/web/4.jpg",
-                        "resources/img/web_design.jpg",
-                        "resources/img/web_design.jpg",
-                        "resources/img/web_design.jpg",
-                        "resources/img/web_design.jpg",
-                        "resources/img/web_design.jpg",
-                    ],
-                });
-            } else if (card.classList.contains("logo")) {
-                tip.classList.add("view");
-                let website = card
-                    .querySelector(".title")
-                    .textContent.replace(" ", "")
-                    .replace(" ", ".")
-                    .toLowerCase();
-                portfolioView({
-                    namePlate: card.querySelector(".title").textContent,
-                    category: "Logo Designing",
-                    project_brief: `Lorem ipsum, dolor sit amet consectetur
-                                    adipisicing elit. At corrupti modi perferendis
-                                    iure corporis dolores minus asperiores nemo
-                                    debitis veritatis id placeat, similique eum
-                                    recusandae ipsa quia cum earum nam?`,
+    //                 image: [
+    //                     "resources/img/portfolios/web/1.jpg",
+    //                     "resources/img/portfolios/web/2.jpg",
+    //                     "resources/img/portfolios/web/3.jpg",
+    //                     "resources/img/portfolios/web/4.jpg",
+    //                     "resources/img/web_design.jpg",
+    //                     "resources/img/web_design.jpg",
+    //                     "resources/img/web_design.jpg",
+    //                     "resources/img/web_design.jpg",
+    //                     "resources/img/web_design.jpg",
+    //                 ],
+    //             });
+    //         } else if (card.classList.contains("logo")) {
+    //             tip.classList.add("view");
+    //             let website = card
+    //                 .querySelector(".title")
+    //                 .textContent.replace(" ", "")
+    //                 .replace(" ", ".")
+    //                 .toLowerCase();
+    //             portfolioView({
+    //                 namePlate: card.querySelector(".title").textContent,
+    //                 category: "Logo Designing",
+    //                 project_brief: `Lorem ipsum, dolor sit amet consectetur
+    //                                 adipisicing elit. At corrupti modi perferendis
+    //                                 iure corporis dolores minus asperiores nemo
+    //                                 debitis veritatis id placeat, similique eum
+    //                                 recusandae ipsa quia cum earum nam?`,
 
-                    project_date: "2019",
-                    project_client: `${
-                        card.querySelector(".title").textContent
-                    } Corporation`,
-                    project_link: `www.${website}.com`,
+    //                 project_date: "2019",
+    //                 project_client: `${
+    //                     card.querySelector(".title").textContent
+    //                 } Corporation`,
+    //                 project_link: `www.${website}.com`,
 
-                    image: [
-                        "resources/img/portfolios/logo/1.jpg",
-                        "resources/img/portfolios/logo/2.jpg",
-                        "resources/img/portfolios/logo/3.jpg",
-                        "resources/img/portfolios/logo/4.jpg",
-                        "resources/img/portfolios/logo/5.jpg",
-                        "resources/img/portfolios/logo/6.jpg",
-                        "resources/img/portfolios/logo/7.jpg",
-                        "resources/img/logo_design.jpg",
-                        "resources/img/logo_design.jpg",
-                    ],
-                });
-            } else if (card.classList.contains("card")) {
-                tip.classList.add("view");
-                let website = card
-                    .querySelector(".title")
-                    .textContent.replace(" ", "")
-                    .replace(" ", ".")
-                    .toLowerCase();
-                portfolioView({
-                    namePlate: card.querySelector(".title").textContent,
-                    category: "Graphics Designing",
-                    project_brief: `Lorem ipsum, dolor sit amet consectetur
-                                    adipisicing elit. At corrupti modi perferendis
-                                    iure corporis dolores minus asperiores nemo
-                                    debitis veritatis id placeat, similique eum
-                                    recusandae ipsa quia cum earum nam?`,
+    //                 image: [
+    //                     "resources/img/portfolios/logo/1.jpg",
+    //                     "resources/img/portfolios/logo/2.jpg",
+    //                     "resources/img/portfolios/logo/3.jpg",
+    //                     "resources/img/portfolios/logo/4.jpg",
+    //                     "resources/img/portfolios/logo/5.jpg",
+    //                     "resources/img/portfolios/logo/6.jpg",
+    //                     "resources/img/portfolios/logo/7.jpg",
+    //                     "resources/img/logo_design.jpg",
+    //                     "resources/img/logo_design.jpg",
+    //                 ],
+    //             });
+    //         } else if (card.classList.contains("card")) {
+    //             tip.classList.add("view");
+    //             let website = card
+    //                 .querySelector(".title")
+    //                 .textContent.replace(" ", "")
+    //                 .replace(" ", ".")
+    //                 .toLowerCase();
+    //             portfolioView({
+    //                 namePlate: card.querySelector(".title").textContent,
+    //                 category: "Graphics Designing",
+    //                 project_brief: `Lorem ipsum, dolor sit amet consectetur
+    //                                 adipisicing elit. At corrupti modi perferendis
+    //                                 iure corporis dolores minus asperiores nemo
+    //                                 debitis veritatis id placeat, similique eum
+    //                                 recusandae ipsa quia cum earum nam?`,
 
-                    project_date: "2019",
-                    project_client: `${
-                        card.querySelector(".title").textContent
-                    } Corporation`,
-                    project_link: `www.${website}.com`,
+    //                 project_date: "2019",
+    //                 project_client: `${
+    //                     card.querySelector(".title").textContent
+    //                 } Corporation`,
+    //                 project_link: `www.${website}.com`,
 
-                    image: [
-                        "resources/img/portfolios/card/1.jpg",
-                        "resources/img/portfolios/card/2.jpg",
-                        "resources/img/portfolios/card/3.jpg",
-                        "resources/img/portfolios/card/4.jpg",
-                        "resources/img/portfolios/card/5.jpg",
-                        "resources/img/graphics_design.jpg",
-                        "resources/img/graphics_design.jpg",
-                        "resources/img/graphics_design.jpg",
-                        "resources/img/graphics_design.jpg",
-                    ],
-                });
-            } else if (card.classList.contains("icon")) {
-                tip.classList.add("view");
-                let website = card
-                    .querySelector(".title")
-                    .textContent.replace(" ", "")
-                    .replace(" ", ".")
-                    .toLowerCase();
-                portfolioView({
-                    namePlate: card.querySelector(".title").textContent,
-                    category: "Icon Designing",
-                    project_brief: `Lorem ipsum, dolor sit amet consectetur
-                                    adipisicing elit. At corrupti modi perferendis
-                                    iure corporis dolores minus asperiores nemo
-                                    debitis veritatis id placeat, similique eum
-                                    recusandae ipsa quia cum earum nam?`,
+    //                 image: [
+    //                     "resources/img/portfolios/card/1.jpg",
+    //                     "resources/img/portfolios/card/2.jpg",
+    //                     "resources/img/portfolios/card/3.jpg",
+    //                     "resources/img/portfolios/card/4.jpg",
+    //                     "resources/img/portfolios/card/5.jpg",
+    //                     "resources/img/graphics_design.jpg",
+    //                     "resources/img/graphics_design.jpg",
+    //                     "resources/img/graphics_design.jpg",
+    //                     "resources/img/graphics_design.jpg",
+    //                 ],
+    //             });
+    //         } else if (card.classList.contains("icon")) {
+    //             tip.classList.add("view");
+    //             let website = card
+    //                 .querySelector(".title")
+    //                 .textContent.replace(" ", "")
+    //                 .replace(" ", ".")
+    //                 .toLowerCase();
+    //             portfolioView({
+    //                 namePlate: card.querySelector(".title").textContent,
+    //                 category: "Icon Designing",
+    //                 project_brief: `Lorem ipsum, dolor sit amet consectetur
+    //                                 adipisicing elit. At corrupti modi perferendis
+    //                                 iure corporis dolores minus asperiores nemo
+    //                                 debitis veritatis id placeat, similique eum
+    //                                 recusandae ipsa quia cum earum nam?`,
 
-                    project_date: "2019",
-                    project_client: `${
-                        card.querySelector(".title").textContent
-                    } Corporation`,
-                    project_link: `www.${website}.com`,
+    //                 project_date: "2019",
+    //                 project_client: `${
+    //                     card.querySelector(".title").textContent
+    //                 } Corporation`,
+    //                 project_link: `www.${website}.com`,
 
-                    image: [
-                        "resources/img/portfolios/icon/1.jpg",
-                        "resources/img/portfolios/icon/2.jpg",
-                        "resources/img/portfolios/icon/3.jpg",
-                        "resources/img/portfolios/icon/4.jpg",
-                        "resources/img/portfolios/icon/5.jpg",
-                        "resources/img/icon_design.png",
-                        "resources/img/icon_design.png",
-                        "resources/img/icon_design.png",
-                        "resources/img/icon_design.png",
-                    ],
-                });
-            } else if (card.classList.contains("app")) {
-                tip.classList.add("view");
-                let website = card
-                    .querySelector(".title")
-                    .textContent.replace(" ", "")
-                    .replace(" ", ".")
-                    .toLowerCase();
-                portfolioView({
-                    namePlate: card.querySelector(".title").textContent,
-                    category: "UI/UX Designing",
-                    project_brief: `Lorem ipsum, dolor sit amet consectetur
-                                    adipisicing elit. At corrupti modi perferendis
-                                    iure corporis dolores minus asperiores nemo
-                                    debitis veritatis id placeat, similique eum
-                                    recusandae ipsa quia cum earum nam?`,
+    //                 image: [
+    //                     "resources/img/portfolios/icon/1.jpg",
+    //                     "resources/img/portfolios/icon/2.jpg",
+    //                     "resources/img/portfolios/icon/3.jpg",
+    //                     "resources/img/portfolios/icon/4.jpg",
+    //                     "resources/img/portfolios/icon/5.jpg",
+    //                     "resources/img/icon_design.png",
+    //                     "resources/img/icon_design.png",
+    //                     "resources/img/icon_design.png",
+    //                     "resources/img/icon_design.png",
+    //                 ],
+    //             });
+    //         } else if (card.classList.contains("app")) {
+    //             tip.classList.add("view");
+    //             let website = card
+    //                 .querySelector(".title")
+    //                 .textContent.replace(" ", "")
+    //                 .replace(" ", ".")
+    //                 .toLowerCase();
+    //             portfolioView({
+    //                 namePlate: card.querySelector(".title").textContent,
+    //                 category: "UI/UX Designing",
+    //                 project_brief: `Lorem ipsum, dolor sit amet consectetur
+    //                                 adipisicing elit. At corrupti modi perferendis
+    //                                 iure corporis dolores minus asperiores nemo
+    //                                 debitis veritatis id placeat, similique eum
+    //                                 recusandae ipsa quia cum earum nam?`,
 
-                    project_date: "2019",
-                    project_client: `${
-                        card.querySelector(".title").textContent
-                    } Corporation`,
-                    project_link: `www.${website}.com`,
+    //                 project_date: "2019",
+    //                 project_client: `${
+    //                     card.querySelector(".title").textContent
+    //                 } Corporation`,
+    //                 project_link: `www.${website}.com`,
 
-                    image: [
-                        "resources/img/portfolios/app/1.jpg",
-                        "resources/img/portfolios/app/2.jpg",
-                        "resources/img/portfolios/app/3.jpg",
-                        "resources/img/ui_design.jpg",
-                        "resources/img/ui_design.jpg",
-                        "resources/img/ui_design.jpg",
-                        "resources/img/ui_design.jpg",
-                        "resources/img/ui_design.jpg",
-                        "resources/img/ui_design.jpg",
-                    ],
-                });
-            }
-        });
-    });
+    //                 image: [
+    //                     "resources/img/portfolios/app/1.jpg",
+    //                     "resources/img/portfolios/app/2.jpg",
+    //                     "resources/img/portfolios/app/3.jpg",
+    //                     "resources/img/ui_design.jpg",
+    //                     "resources/img/ui_design.jpg",
+    //                     "resources/img/ui_design.jpg",
+    //                     "resources/img/ui_design.jpg",
+    //                     "resources/img/ui_design.jpg",
+    //                     "resources/img/ui_design.jpg",
+    //                 ],
+    //             });
+    //         }
+    //     });
+    // });
 });
